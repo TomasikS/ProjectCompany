@@ -8,6 +8,10 @@
         <servlet-name>SaveServlet</servlet-name>
         <servlet-class>SaveServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ComputeServlet</servlet-name>
+        <servlet-class>ComputeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>
         <url-pattern>/Servlet</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>SaveServlet</servlet-name>
         <url-pattern>/SaveServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ComputeServlet</servlet-name>
+        <url-pattern>/ComputeServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

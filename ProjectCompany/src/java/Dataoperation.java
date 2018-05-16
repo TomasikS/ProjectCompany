@@ -83,7 +83,7 @@ public class Dataoperation {
             ResultSet rs=ps.executeQuery();
             while(rs.next()){  
                 Employee e=new Employee();  
-               
+               e.setId(rs.getInt(1));
                e.setKids(rs.getInt(3));
              e.setHours(rs.getInt(4));
              e.setAmount(rs.getInt(5));
@@ -108,6 +108,33 @@ zozv.get(i).plat=zozv.get(i).plat*0.19;
          return zozv; 
         
     }  
+
+   public static Employee getEmployeeById(int id){  
+        Employee e=new Employee();  
+          
+        try{  
+             Class.forName(driver).newInstance();
+            conn = DriverManager.getConnection(url,username,password);
+            
+            
+             String query = "select * from employee where id=?";
+            PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
+   
+            ps.setInt(1,id);  
+            ResultSet rs=ps.executeQuery();  
+            if(rs.next()){  
+                e.setId(rs.getInt(1));  
+             
+                  e.setfirstname(rs.getString(2));  
+                e.setlastname(rs.getString(3));  
+                e.setrc(rs.getString(4));  
+                e.setgender(rs.getString(5));  
+            }  
+            conn.close();  
+        }catch(Exception ex){ex.printStackTrace();}  
+          
+        return e;  
+    }
     
     
      
