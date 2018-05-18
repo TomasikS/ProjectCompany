@@ -35,11 +35,11 @@ public class Servlet  extends HttpServlet {
              out.println("<link rel='stylesheet' href='style.css' type='text/css'>");
                
             out.print("<table border='1' width='100%'");
-out.print("<tr><th>Id</th><th>Firstname</th><th>Lastname</th><th>RC</th><th>Gender</th> <th>Edit</th><th>Delete</th></tr>");    
+out.print("<tr><th>Id</th><th>Firstname</th><th>Lastname</th><th>RC</th><th>Gender</th></tr>");    
            
 for(Employee e:list){
 out.print("<tr><td>"+e.getId()+"</td><td>"+e.getfirstname()+
-        "</td><td>"+e.getlastname()+"</td> <td>"+e.getrc()+"</td><td>"+e.getgender()+"</td><td><a href='EditServlet?id="+e.getId()+">edit</a></td><td>"+"</td><td></tr>");
+        "</td><td>"+e.getlastname()+"</td> <td>"+e.getrc()+"</td><td>"+e.getgender()+"</td> </tr>");
                                                         }
                           
        

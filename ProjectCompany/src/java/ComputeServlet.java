@@ -47,13 +47,14 @@ public class ComputeServlet extends HttpServlet {
                                 out.print("<br>"); 
                                 
             out.print("<table border='1' width='100%'");                
-              out.print("<tr><th>Id</th><th>Salary</th></tr>"); 
+              out.print("<tr><th>Id</th><th>Salary</th> <th>SP</th> <th>ZP</th> </tr>"); 
 
 for(int i=0;i<list2.size();i++)
               
-out.print("<tr><td>" +list2.get(i).getId()+"</td><td>"+ Math.round(list2.get(i).getPlat())+"</td></tr>");
+/*out.print("<tr><td>" +list2.get(i).getId()+"</td><td><td>"+  list2.get(i).getSp() +"</td></td><td><td>" +  list2.get(i).getZp()+"  </td></td></tr>"             );
 
- 
+ */
+    out.print("<tr><td>" +list2.get(i).getId()+ "</td> <td>" +list2.get(i).getPlat()+ "</td>   <td>" +list2.get(i).getSp()+ "</td>    <td>" +list2.get(i).getZp()+ "</td>  </tr>"       );
       
                             out.print("</table>");
                             

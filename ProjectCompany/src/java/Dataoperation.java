@@ -3,8 +3,11 @@
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -23,6 +26,8 @@ public class Dataoperation {
     private static String url="jdbc:mysql://localhost:3306/company";
     private static String username="root";
     private static String password="root";
+
+   
    
    public List<Employee>  getAllEmployees(){
         List<Employee> list = new ArrayList<>();
@@ -69,7 +74,26 @@ public class Dataoperation {
        return status;  
     }  
     
-    
+    public static int save2(Employee e){  
+       int status=0;  
+        try{  
+                 Class.forName(driver).newInstance();
+            conn = DriverManager.getConnection(url,username,password);
+            PreparedStatement ps=(PreparedStatement) conn.prepareStatement(  
+                    "update employee set firstname=?,lastname=?,rc=?,gender=? ");  
+            ps.setString(1,e.getfirstname());  
+            ps.setString(2,e.getlastname());  
+            ps.setString(3,e.getrc());  
+            ps.setString(4,e.getgender());  
+              
+           status=ps.executeUpdate();  
+              
+            conn.close();  
+        }catch(Exception ex){ex.printStackTrace();}  
+          
+       return status;  
+    }  
+
      public static List compute(){  
         
           List<Employee> zozv = new ArrayList<>();
@@ -101,8 +125,8 @@ public class Dataoperation {
              zozv.get(i).plat=   zozv.get(i).getHours()+zozv.get(i).getBonus();
 zozv.get(i).plat=zozv.get(i).plat*0.19;
         zozv.get(i).plat=zozv.get(i).plat*0.48;
-            
-            
+            zozv.get(i).zp=9.4/100*zozv.get(i).plat;
+             zozv.get(i).sp=4/100*zozv.get(i).plat;
             }
                  
          return zozv; 
@@ -135,7 +159,28 @@ zozv.get(i).plat=zozv.get(i).plat*0.19;
           
         return e;  
     }
-    
+
+    public static int update(Employee e){  
+        int status=0;  
+        try{  
+           
+            Class.forName(driver).newInstance();
+            conn = DriverManager.getConnection(url,username,password);
+            PreparedStatement ps=(PreparedStatement) conn.prepareStatement(  
+                         "update employee set firstname=?,lastname=?,rc=?,gender=? where id=?");  
+            ps.setString(2,e.getfirstname());  
+            ps.setString(3,e.getlastname());  
+            ps.setString(4,e.getrc());  
+            ps.setString(5,e.getgender());  
+           ps.setInt(5,e.getId());  
+              
+            status=ps.executeUpdate();  
+              
+            conn.close();  
+        }catch(Exception ex){ex.printStackTrace();}  
+          
+        return status;  
+    }  
     
      
     

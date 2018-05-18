@@ -4,45 +4,55 @@
  * and open the template in the editor.
  */
 
+ 
+
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*; 
 
 /**
  *
  * @author Lenovo
  */
-public class EditServlet extends HttpServlet {  
-    
-    Dataoperation dao=new Dataoperation();
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)   
-           throws ServletException, IOException {  
-        response.setContentType("text/html");  
-        PrintWriter out=response.getWriter();  
-        out.println("<h1>Update Employee</h1>");  
-        String sid=request.getParameter("id");  
-        int id=Integer.parseInt(sid);  
-           List<Employee> list=dao.getAllEmployees();
-        Employee e=dao.getEmployeeById(id);  
-          
-        out.print("<form action='RequestServlet' method='post'>");  
-        out.print("<table>");  
-        out.print("<tr><th>Id</th><th>Firstname</th><th>Lastname</th><th>RC</th><th>Gender</th></tr>");
+public class EditServlet extends HttpServlet 
+{
+
         
-        
-        for(Employee z:list){
-out.print("<tr><td>"+z.getId()+"</td><td>"+z.getfirstname()+
-        "</td><td>"+z.getlastname()+"</td> <td>"+z.getrc()+"</td><td>"+z.getgender()+"</td><td>id="+z.getId()+ "</td></tr>");
-                                                        } 
-        out.print("<tr><td colspan='2'><input type='submit' value='Edit & Save '/></td></tr>");  
-        out.print("</table>");  
-        out.print("</form>");  
+ 
+         @Override
+         protected void    doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    // set String foo to the form element named "foo"
+  String s1=request.getParameter("Firstname");  System.out.println("s1"+s1);
+        String s2=request.getParameter("Lastname");  
+        String s3=request.getParameter("RC");  
+        String s4=request.getParameter("Gender");  
+           PrintWriter out=response.getWriter();  
+        Employee e=new Employee();  
+        e.setfirstname(s1);  
+        e.setlastname(s2);  
+        e.setrc(s3);  
+        e.setgender(s4);
+ int status=
+                
+                
+                Dataoperation.save(e);  
+        if(status>0){  
+           out.print("<p>Record saved successfully!</p>");  
+           request.getRequestDispatcher("index.html").include(request, response);  
+       }else{  
+            out.println("Sorry! unable to save record");  
+       }  
           
         out.close();  
-    }  
-}  
+    }
+    
+    
+    
+    
+    
+         }
+        
+        
+        
+  

@@ -28,8 +28,9 @@ public class SaveServlet extends HttpServlet {
         String s2=request.getParameter("Lastname");  
         String s3=request.getParameter("RC");  
         String s4=request.getParameter("Gender");  
-          
-        Employee e=new Employee();  
+        
+        Employee e=new Employee();
+      //  e.setId(RequestServlet.getDataID());
         e.setfirstname(s1);  
         e.setlastname(s2);  
         e.setrc(s3);  
@@ -38,7 +39,7 @@ public class SaveServlet extends HttpServlet {
        int status=
                 
                 
-                Dataoperation.save(e);  
+                Dataoperation.save2(e);  
         if(status>0){  
            out.print("<p>Record saved successfully!</p>");  
            request.getRequestDispatcher("index.html").include(request, response);  

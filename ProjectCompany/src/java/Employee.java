@@ -20,7 +20,8 @@ private String firstname,lastname, rc,gender;
  
     private int amount;
     private int bonus;
-
+public double zp;
+public double sp;
 
 double plat;
 
@@ -101,6 +102,22 @@ public void setgender(String country) {
 
     public void setBonus(int bonus) {
         this.bonus = bonus;
+    }
+
+    public double getZp() {
+        return zp;
+    }
+
+    public void setZp(double zp) {
+        this.zp = zp;
+    }
+
+    public double getSp() {
+        return sp;
+    }
+
+    public void setSp(double sp) {
+        this.sp = sp;
     }
   
 
