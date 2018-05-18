@@ -24,7 +24,7 @@ public class Servlet  extends HttpServlet {
                throws ServletException, IOException {  
         response.setContentType("text/html");  
         try (PrintWriter out = response.getWriter()) {
-            out.println("<a href='index.html'>Add New Employee</a>");
+         //   out.println("<a href='index.html'>Add New Employee</a>");
             out.println("<h1>Employees List</h1>");
             
             List<Employee> list=dop.getAllEmployees();

@@ -29,7 +29,7 @@ while(resultSet.next()){
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Update data from database in jsp</h1>
+<h1>Update data </h1>
 <form method="post" action="update-process.jsp">
 <input type="hidden" name="id" value="<%=resultSet.getString("id") %>">
 <input type="text" name="id" value="<%=resultSet.getString("id") %>">

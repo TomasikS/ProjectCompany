@@ -39,7 +39,7 @@ public class SaveServlet extends HttpServlet {
        int status=
                 
                 
-                Dataoperation.save2(e);  
+                Dataoperation.save(e);  
         if(status>0){  
            out.print("<p>Record saved successfully!</p>");  
            request.getRequestDispatcher("index.html").include(request, response);  

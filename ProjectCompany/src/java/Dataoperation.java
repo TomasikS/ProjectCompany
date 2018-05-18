@@ -47,7 +47,7 @@ public class Dataoperation {
                 list.add(e);  
              
             }  
-
+conn.close();
         }catch(Exception ex){
             System.out.println("Error: "+ ex.getMessage());
         }
