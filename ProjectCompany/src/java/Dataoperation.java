@@ -3,11 +3,8 @@
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -125,8 +122,8 @@ conn.close();
              zozv.get(i).plat=   zozv.get(i).getHours()+zozv.get(i).getBonus();
 zozv.get(i).plat=zozv.get(i).plat*0.19;
         zozv.get(i).plat=zozv.get(i).plat*0.48;
-            zozv.get(i).zp=9.4/100*zozv.get(i).plat;
-             zozv.get(i).sp=4/100*zozv.get(i).plat;
+            zozv.get(i).zp=(9.4 /100)*zozv.get(i).plat;
+             zozv.get(i).sp=(4.0 /100)*zozv.get(i).plat;
             }
                  
          return zozv; 
