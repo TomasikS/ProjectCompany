@@ -8,6 +8,19 @@ and open the template in the editor.
    <head>  
  <link rel="stylesheet" type="text/css" href="style.css">
 <title>Insert title here</title>  
+
+<script type="text/javascript">  
+      var re = /[0-9]{10}/;  
+      function testInfo(phoneInput) {  
+        var OK = re.exec(phoneInput.value);  
+        if (!OK)  {
+          window.alert(phoneInput.value + ' wrong identify number');  
+      document.getElementById('rc').attr("disabled", true);
+        }
+        else
+          window.alert('OK' + OK[0]);  
+      }  
+    </script> 
 </head>  
 <body>  
   
@@ -16,10 +29,13 @@ and open the template in the editor.
 <table>  
 <tr><td>Firstname</td><td><input type="text" name="Firstname"/></td></tr>  
 <tr><td>Lastname</td><td><input type="text" name="Lastname"/></td></tr>  
-<tr><td>RC:</td><td><input type="text" name="RC"/></td></tr>  
-<tr><td>Gender:</td><td><input type="text" name="Gender"/> </td ></tr>  
-
-<tr><td colspan="2"><input type="submit" value="Save Employee"/></td></tr>  
+<tr><td>Identification number:</td><td><input type="text"  id="rc" name="RC"/></td></tr>  
+<tr><td>Gender:   </td><td>        <select    name="Gender" id="Gender"/ > 
+  <option value="M">M</option>
+  <option value="Z">Z</option>
+   
+</select></td></tr> 
+<tr><td colspan="2"><input type="submit"        onclick="testInfo(document.getElementById('rc'));" value="Save Employee"/></td></tr>  
 </table>  
 </form>  
   

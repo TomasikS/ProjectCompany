@@ -25,6 +25,33 @@ public double sp;
 
 double plat;
 
+    public int getDbonus() {
+        return dbonus;
+    }
+
+    public void setDbonus(int dbonus) {
+        this.dbonus = dbonus;
+    }
+
+    public double getZrazky() {
+        return zrazky;
+    }
+
+    public void setZrazky(double zrazky) {
+        this.zrazky = zrazky;
+    }
+
+    public double getPbonus() {
+        return pbonus;
+    }
+
+    public void setPbonus(double pbonus) {
+        this.pbonus = pbonus;
+    }
+    int dbonus;
+    double zrazky;
+    double pbonus;
+
 public double getPlat() {  
     return plat;  
 }  

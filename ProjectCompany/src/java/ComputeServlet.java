@@ -47,7 +47,7 @@ public class ComputeServlet extends HttpServlet {
                                 out.print("<br>"); 
                                 
             out.print("<table border='1' width='100%'");                
-              out.print("<tr><th>Id</th><th>Salary</th> <th>SP</th> <th>ZP</th> </tr>"); 
+              out.print("<tr><th>Id</th><th>Salary</th> <th>Social levies</th> <th>Health levies</th> </tr>"); 
 
 for(int i=0;i<list2.size();i++)
               
@@ -57,9 +57,35 @@ for(int i=0;i<list2.size();i++)
     out.print("<tr><td>" +list2.get(i).getId()+ "</td> <td>" +list2.get(i).getPlat()+ "</td>   <td>" +list2.get(i).getSp()+ "</td>    <td>" +list2.get(i).getZp()+ "</td>  </tr>"       );
       
                             out.print("</table>");
+        
+                            
+                           out.print("<br>"); out.print("<br>"); out.print("<br>"); out.print("<br>"); 
+                            
+           out.print("<table border='1' width='100%'");                
+              out.print("<tr><th>Id</th>  <th>Denactious payouy</th> <th>taxbonus</th> <th> Bonus</th> </tr>"); 
+
+for(int i=0;i<list2.size();i++)
+              
+/*out.print("<tr><td>" +list2.get(i).getId()+"</td><td><td>"+  list2.get(i).getSp() +"</td></td><td><td>" +  list2.get(i).getZp()+"  </td></td></tr>"             );
+
+ */
+    out.print("<tr><td>" +list2.get(i).getId()+"</td><td>" +list2.get(i).getZrazky()+ "</td> <td>" +list2.get(i).getDbonus()+ "</td>     <td>" +list2.get(i).getPbonus()+ "</td>  </tr>"       );
+      
+                            out.print("</table>");
                             
         }
-    }
+    }                 
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+        
+ 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

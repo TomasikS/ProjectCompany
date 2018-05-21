@@ -12,14 +12,19 @@
         <servlet-name>ComputeServlet</servlet-name>
         <servlet-class>ComputeServlet</servlet-class>
     </servlet>
-     <servlet>
+    <servlet>
         <servlet-name>RequestServlet</servlet-name>
-        <servlet-class>RequestServlet</servlet-class>
+        <servlet-class>ComputingServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>EditServlet</servlet-name>
         <servlet-class>EditServlet</servlet-class>
     </servlet>
+        <servlet>
+        <servlet-name>ComputingServlet</servlet-name>
+        <servlet-class>ComputingServlet</servlet-class>
+    </servlet>
+    
     
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>
@@ -33,16 +38,22 @@
         <servlet-name>ComputeServlet</servlet-name>
         <url-pattern>/ComputeServlet</url-pattern>
     </servlet-mapping>
-    
-      <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>RequestServlet</servlet-name>
         <url-pattern>/RequestServlet</url-pattern>
     </servlet-mapping>
-    
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>EditServlet</servlet-name>
         <url-pattern>/EditServlet</url-pattern>
     </servlet-mapping>
+    
+     
+      <servlet-mapping>
+        <servlet-name>ComputingServlet</servlet-name>
+        <url-pattern>/ComputingServlet</url-pattern>
+    </servlet-mapping>
+    
+    
     
     
     <session-config>

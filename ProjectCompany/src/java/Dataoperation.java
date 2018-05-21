@@ -124,6 +124,13 @@ zozv.get(i).plat=zozv.get(i).plat*0.19;
         zozv.get(i).plat=zozv.get(i).plat*0.48;
             zozv.get(i).zp=(9.4 /100)*zozv.get(i).plat;
              zozv.get(i).sp=(4.0 /100)*zozv.get(i).plat;
+             zozv.get(i).dbonus=20*zozv.get(i).getKids();
+                zozv.get(i).zrazky=0.6* zozv.get(i).plat -( zozv.get(i).plat-zozv.get(i).getKids()*1245 -zozv.get(i).plat); 
+               zozv.get(i).zrazky=          zozv.get(i).zrazky/3;
+               zozv.get(i).pbonus=0.19*(zozv.get(i).plat-    zozv.get(i).sp -   zozv.get(i).zp     );
+               if(zozv.get(i).pbonus <0) zozv.get(i).pbonus=0;
+               
+            
             }
                  
          return zozv; 
