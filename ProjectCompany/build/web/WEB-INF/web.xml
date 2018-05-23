@@ -28,6 +28,10 @@
         <servlet-name>ServletHistory</servlet-name>
         <servlet-class>ServletHistory</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AbsenceServlet</servlet-name>
+        <servlet-class>AbsenceServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>
         <url-pattern>/Servlet</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>ServletHistory</servlet-name>
         <url-pattern>/ServletHistory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AbsenceServlet</servlet-name>
+        <url-pattern>/AbsenceServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

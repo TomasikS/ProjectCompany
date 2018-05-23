@@ -12,7 +12,31 @@ public class Employee {
 private int id;  
 private String firstname,lastname, rc,gender; 
     private int idu;
+private int AbsenceA, AbsenceP,AbsenceI ;
 
+    public int getAbsenceA() {
+        return AbsenceA;
+    }
+
+    public void setAbsenceA(int AbsenceA) {
+        this.AbsenceA = AbsenceA;
+    }
+
+    public int getAbsenceP() {
+        return AbsenceP;
+    }
+
+    public void setAbsenceP(int AbsenceP) {
+        this.AbsenceP = AbsenceP;
+    }
+
+    public int getAbsenceI() {
+        return AbsenceI;
+    }
+
+    public void setAbsenceI(int AbsenceI) {
+        this.AbsenceI = AbsenceI;
+    }
     public int getAbsence() {
         return absence;
     }

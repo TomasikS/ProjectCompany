@@ -71,26 +71,6 @@ conn.close();
        return status;  
     }  
     
-    public static int save2(Employee e){  
-       int status=0;  
-        try{  
-                 Class.forName(driver).newInstance();
-            conn = DriverManager.getConnection(url,username,password);
-            PreparedStatement ps=(PreparedStatement) conn.prepareStatement(  
-                    "update employee set firstname=?,lastname=?,rc=?,gender=? ");  
-            ps.setString(1,e.getfirstname());  
-            ps.setString(2,e.getlastname());  
-            ps.setString(3,e.getrc());  
-            ps.setString(4,e.getgender());  
-              
-           status=ps.executeUpdate();  
-              
-            conn.close();  
-        }catch(Exception ex){ex.printStackTrace();}  
-          
-       return status;  
-    }  
-
      public static List compute(){  
         
           List<Employee> zozv = new ArrayList<>();
@@ -137,34 +117,33 @@ zozv.get(i).plat=zozv.get(i).plat*0.19;
         
     }  
 
-   public static Employee getEmployeeById(int id){  
-        Employee e=new Employee();  
-          
-        try{  
-             Class.forName(driver).newInstance();
-            conn = DriverManager.getConnection(url,username,password);
-            
-            
-             String query = "select * from employee where id=?";
-            PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
-   
-            ps.setInt(1,id);  
-            ResultSet rs=ps.executeQuery();  
-            if(rs.next()){  
-                e.setId(rs.getInt(1));  
-             
-                  e.setfirstname(rs.getString(2));  
-                e.setlastname(rs.getString(3));  
-                e.setrc(rs.getString(4));  
-                e.setgender(rs.getString(5));  
-            }  
-            conn.close();  
-        }catch(Exception ex){ex.printStackTrace();}  
-          
-        return e;  
-    }
 
-    
+
+     public List<Employee>  getAbsences(){
+        List<Employee> list = new ArrayList<>();
+        try {
+            Class.forName(driver).newInstance();
+            conn = DriverManager.getConnection(url,username,password);
+            String query = "SELECT absence.absence, absence.absence_P, absence. ill, employee.firstname, employee.lastname from absence inner join employee on employee.id=absence.idu; ";
+            PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
+            ResultSet rs=ps.executeQuery();
+            while(rs.next()){  
+                Employee e=new Employee();  
+                e.setAbsenceA(rs.getInt(1));  
+                 e.setAbsenceP(rs.getInt(2));  
+                 e.setAbsenceI(rs.getInt(3)); 
+                  e.setfirstname(rs.getString(4));  
+                e.setlastname(rs.getString(5));  
+               
+                list.add(e);  
+             
+            }  
+conn.close();
+        }catch(Exception ex){
+            System.out.println("Error: "+ ex.getMessage());
+        }
+        return list;
+    }
     
      
     
