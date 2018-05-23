@@ -9,12 +9,56 @@ and open the template in the editor.
 <head>  
  <link rel="stylesheet" type="text/css" href="style.css">
 <title>INFORMATION SYSTEM -- EMPLOYEES</title>  
+<style>
+body {
+    font-family: "Times New Roman";
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: green;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+ 
+</style>
+
+
 </head>  
 <body>  
   
  
   <h1>INFORMATION SYSTEM -- EMPLOYEES</h1>  
 <br>  
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <a href="Servlet">view employees</a>  
 <br>  
 
@@ -33,9 +77,33 @@ and open the template in the editor.
   <br>  
 
   <a href="Form.jsp">Edit</a>   
+  <br>
+    <br>
+  <a href="formedit.html">History information</a>   
+  <br>
   
   
   
   
+  
+  
+  
+  
+  
+  <br>  
+  </div>
+
+ 
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 </body>  
 </html>  

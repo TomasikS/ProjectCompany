@@ -164,27 +164,7 @@ zozv.get(i).plat=zozv.get(i).plat*0.19;
         return e;  
     }
 
-    public static int update(Employee e){  
-        int status=0;  
-        try{  
-           
-            Class.forName(driver).newInstance();
-            conn = DriverManager.getConnection(url,username,password);
-            PreparedStatement ps=(PreparedStatement) conn.prepareStatement(  
-                         "update employee set firstname=?,lastname=?,rc=?,gender=? where id=?");  
-            ps.setString(2,e.getfirstname());  
-            ps.setString(3,e.getlastname());  
-            ps.setString(4,e.getrc());  
-            ps.setString(5,e.getgender());  
-           ps.setInt(5,e.getId());  
-              
-            status=ps.executeUpdate();  
-              
-            conn.close();  
-        }catch(Exception ex){ex.printStackTrace();}  
-          
-        return status;  
-    }  
+    
     
      
     

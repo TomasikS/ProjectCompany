@@ -62,7 +62,7 @@ for(int i=0;i<list2.size();i++)
                            out.print("<br>"); out.print("<br>"); out.print("<br>"); out.print("<br>"); 
                             
            out.print("<table border='1' width='100%'");                
-              out.print("<tr><th>Id</th>  <th>Denactious payouy</th> <th>taxbonus</th> <th> Bonus</th> </tr>"); 
+              out.print("<tr><th>Id</th>  <th>Denactious payout</th> <th>taxbonus</th> <th> Bonus</th> </tr>"); 
 
 for(int i=0;i<list2.size();i++)
               

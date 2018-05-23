@@ -13,6 +13,23 @@ private int id;
 private String firstname,lastname, rc,gender; 
     private int idu;
 
+    public int getAbsence() {
+        return absence;
+    }
+
+    public void setAbsence(int absence) {
+        this.absence = absence;
+    }
+private int absence;
+
+    public int getOldv() {
+        return oldv;
+    }
+
+    public void setOldv(int oldv) {
+        this.oldv = oldv;
+    }
+private int oldv;
     private int kids;
 
 
