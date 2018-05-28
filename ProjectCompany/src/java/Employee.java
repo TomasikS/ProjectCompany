@@ -12,7 +12,15 @@ public class Employee {
 private int id;  
 private String firstname,lastname, rc,gender; 
     private int idu;
-private int AbsenceA, AbsenceP,AbsenceI ;
+ int AbsenceA, AbsenceP,AbsenceI, hplat ;
+
+    public int getHplat() {
+        return hplat;
+    }
+
+    public void setHplat(int hplat) {
+        this.hplat = hplat;
+    }
 
     public int getAbsenceA() {
         return AbsenceA;

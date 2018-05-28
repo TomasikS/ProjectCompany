@@ -29,6 +29,8 @@ while(resultSet.next()){
 <!DOCTYPE html>
 <html>
 <body>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
 <h1>Update data </h1>
 <form method="post" action="update-process.jsp">
 <input type="hidden" name="id" value="<%=resultSet.getString("id") %>">

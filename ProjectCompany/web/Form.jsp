@@ -22,8 +22,14 @@ Connection connection = null;
 Statement statement = null;
 ResultSet resultSet = null;
 %>
-<html>
+
+<head>
+<title>INFORMATION SYSTEM -- EMPLOYEES</title> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
 <body>
+
 <h1>Table employee</h1>
 <table border="1">
 <tr>

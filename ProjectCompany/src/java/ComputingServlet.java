@@ -37,8 +37,11 @@ public class ComputingServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            List<Employee> list2=dop.compute();
-             System.out.println(list2);
+            List<Employee> list2 = null;
+            
+                list2 = dop.compute();
+            
+           //  System.out.println(list2);
              
                  response.setContentType("text/html;charset=UTF-8");
  

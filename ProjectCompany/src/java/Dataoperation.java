@@ -3,8 +3,11 @@
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -71,7 +74,32 @@ conn.close();
        return status;  
     }  
     
-     public static List compute(){  
+         public static List compute2() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException{  
+        
+          List<Employee> zozp = new ArrayList<>();
+       
+                 Class.forName(driver).newInstance();
+            conn = DriverManager.getConnection(url,username,password);
+          
+           
+        String query = "SELECT salary5 from salary_history";
+            PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
+            ResultSet rs=ps.executeQuery();
+            while(rs.next()){  
+                Employee e=new Employee();  
+               e.setHplat(rs.getInt(1));
+              
+             zozp.add(e);
+            }  
+              
+            conn.close(); 
+            return zozp;
+            }
+        
+        
+        
+         
+      public static List compute(){  
         
           List<Employee> zozv = new ArrayList<>();
         try{  
@@ -95,11 +123,25 @@ conn.close();
             conn.close(); 
             
             }catch(Exception ex){ex.printStackTrace();} 
-           
-        
+              List<Employee> zoz = new ArrayList<>();
+         try {
+             zoz=compute2();
+         } catch (ClassNotFoundException ex) {
+             Logger.getLogger(Dataoperation.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (SQLException ex) {
+             Logger.getLogger(Dataoperation.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (InstantiationException ex) {
+             Logger.getLogger(Dataoperation.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (IllegalAccessException ex) {
+             Logger.getLogger(Dataoperation.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         for (int j=0;j<zoz.size();j++)
+        zozv.get(j).hplat=zoz.get(j).getHplat();
+         
+         
         for (int i=0;i<zozv.size();i++)
             {
-             zozv.get(i).plat=   zozv.get(i).getHours()+zozv.get(i).getBonus();
+             zozv.get(i).plat=   zozv.get(i).getHours()+zozv.get(i).getBonus()+ zozv.get(0).hplat;
 zozv.get(i).plat=zozv.get(i).plat*0.19;
         zozv.get(i).plat=zozv.get(i).plat*0.48;
             zozv.get(i).zp=(9.4 /100)*zozv.get(i).plat;
@@ -115,9 +157,7 @@ zozv.get(i).plat=zozv.get(i).plat*0.19;
                  
          return zozv; 
         
-    }  
-
-
+    }
 
      public List<Employee>  getAbsences(){
         List<Employee> list = new ArrayList<>();

@@ -28,11 +28,18 @@ while(resultSet.next()){
 %>
 <!DOCTYPE html>
 <html>
+<head>
+<title>INFORMATION SYSTEM -- EMPLOYEES</title> 
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
 <body>
+    
+    
 <h1>Update data </h1>
 <form method="post" action="update-process.jsp">
 <input type="hidden" name="id" value="<%=resultSet.getString("id") %>">
-<input type="text" name="id" value="<%=resultSet.getString("id") %>">
+<input type="text" name="id2" value="<%=resultSet.getString("id") %>">
 <br>
 Firstname:<br>
 <input type="text" name="first_name" value="<%=resultSet.getString("firstname") %>">

@@ -24,6 +24,7 @@ ResultSet resultSet = null;
 %>
 <html>
 <body>
+    <link rel="stylesheet" type="text/css" href="style.css">
 <h1>Table employee</h1>
 <table border="1">
 <tr>

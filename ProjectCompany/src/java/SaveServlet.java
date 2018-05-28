@@ -17,9 +17,48 @@ import javax.servlet.http.HttpServletResponse;
  */
  
 
-public class SaveServlet extends HttpServlet {  
+public class SaveServlet extends HttpServlet { 
+HttpServletResponse response;
+ HttpServletRequest request;
+
+
+    public String getS1() {
+        return s1;
+    }
+
+    public String getS2() {
+        return s2;
+    }
+
+    public String getS3() {
+        return s3;
+    }
+
+    public String getS4() {
+        return s4;
+    }
+    
+  public  String s1,s2,s3,s4;
+
+    public void setS1(String s1) {
+     this.s1=s1;
+    
+    }
+
+    public void setS2(String s2) {
+        this.s2 = s2;
+    }
+
+    public void setS3(String s3) {
+        this.s3 = s3;
+    }
+
+    public void setS4(String s4) {
+        this.s4 = s4;
+    }
+    
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)   
+    public void doPost(HttpServletRequest request, HttpServletResponse response)   
          throws ServletException, IOException {  
         response.setContentType("text/html");  
         PrintWriter out=response.getWriter();  
@@ -35,7 +74,10 @@ public class SaveServlet extends HttpServlet {
         e.setlastname(s2);  
         e.setrc(s3);  
         e.setgender(s4);  
-          
+          setS1(s1);
+               setS3(s3);
+                setS2(s2);
+                 setS4(s4);
        int status=
                 
                 

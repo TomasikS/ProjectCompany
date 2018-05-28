@@ -122,7 +122,7 @@ public class ServletHistory extends HttpServlet {
           }
      
           //out.println(list2.toString());
-           out.print("History of absence");
+           out.print("<H1>History of absence</H1>");
           
           out.println("<link rel='stylesheet' href='style.css' type='text/css'>");
            out.print("<table border='1' width='100%'");
@@ -146,8 +146,9 @@ out.print("<tr><td>"+e.getId()+"</td><td>"+e.getfirstname()  +"</td><td>"+e.getl
              out.print("<br>");
               out.print("<br>");
                out.print("<br>"); out.print("<br>");
-                out.print("History of salary");
-                  
+               
+                out.print("<H1> History of salary</H1>");
+               
                    out.print("<br>");
           
           
