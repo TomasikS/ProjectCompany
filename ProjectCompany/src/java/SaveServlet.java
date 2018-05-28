@@ -18,8 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  
 
 public class SaveServlet extends HttpServlet { 
-HttpServletResponse response;
- HttpServletRequest request;
+
 
 
     public String getS1() {
@@ -69,7 +68,7 @@ HttpServletResponse response;
         String s4=request.getParameter("Gender");  
         
         Employee e=new Employee();
-      //  e.setId(RequestServlet.getDataID());
+     
         e.setfirstname(s1);  
         e.setlastname(s2);  
         e.setrc(s3);  
