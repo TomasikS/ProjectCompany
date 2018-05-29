@@ -58,8 +58,22 @@ public class ComputingServletTest {
         Dataoperation dop=new Dataoperation();
  ComputingServlet ComputingServlet=new ComputingServlet();
   List<Employee> list2 = null;
-            
+        List<Employee> list3 = null;      
                 list2 = dop.compute();    assertNotNull(list2);
+                list3= dop.compute2();assertNotNull(list3);
+          
+          
+                assertNotNull(list2.get(0).getId( ));
+                assertNotNull(list2.get(0).getKids());
+                assertNotNull(list2.get(0).getHours());
+                 assertNotNull(list2.get(0).getAmount());
+                 assertNotNull(list2.get(0).getBonus());
+                 
+                 
+                 
+                 
+                 
+                
     }
     
 }

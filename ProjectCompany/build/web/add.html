@@ -7,40 +7,32 @@ and open the template in the editor.
 <html>
    <head>  
  <link rel="stylesheet" type="text/css" href="style.css">
-<title>Insert title here</title>  
+ <meta charset="UTF-8">
+<title>Adding employee</title>  
 
 <script type="text/javascript">  
       var re = /[0-9]{10}/;  
+         var ree = /[A-Z][a-z]/; 
+      
       function testInfo(phoneInput) {  
-          var a=document.getElementById('rc').value;
-  var b=document.getElementById('Gender').value;
-  var c=document.getElementById('fname').value;
-  var d=document.getElementById('lname').value;
-  if(a === null)document.getElementById('output').attr("disabled", true);
-    if(b === null)document.getElementById('output').attr("disabled", true);
-      if(c === null)document.getElementById('output').attr("disabled", true);
-        if(d === null)document.getElementById('output').attr("disabled", true);
         var OK = re.exec(phoneInput.value);  
         if (!OK)  {
           window.alert(phoneInput.value + ' wrong identify number');  
-      document.getElementById('output').attr("disabled", true);
+      document.getElementById('rc').attr("disabled", true);
         }
         else
           window.alert('OK' + OK[0]);  
-      }  
+      } 
       
-      function check() {  
- var a=document.getElementById('rc');
-  var b=document.getElementById('Gender');
-  var c=document.getElementById('fname');
-  var d=document.getElementById('lname');
-  if(a === null)document.getElementById('output').attr("disabled", true);
-    if(b === null)document.getElementById('output').attr("disabled", true);
-      if(c === null)document.getElementById('output').attr("disabled", true);
-        if(d === null)document.getElementById('output').attr("disabled", true);
-  
-      }  
-      
+            function test(phoneInput) {  
+        var OK = ree.exec(phoneInput.value);  
+        if (!OK)  {
+          window.alert(phoneInput.value + ' wrong name');  
+      document.getElementById('rc').attr("disabled", true);
+        }
+        else
+          window.alert('OK' + OK[0]);  
+      } 
       
       
     </script> 
@@ -50,15 +42,15 @@ and open the template in the editor.
 
 <form action="SaveServlet" method="post">  
 <table>  
-<tr><td>Firstname</td><td><input type="text" name="Firstname" id="fname"  /></td></tr>  
-<tr><td>Lastname</td><td><input type="text" name="Lastname" id="lname"  /></td></tr>  
+    <tr><td>Firstname</td><td><input type="text" name="Firstname" id="fname"  /></td></tr>  
+<tr><td>Lastname</td><td><input type="text" name="Lastname"  /></td></tr>  
 <tr><td>Identification number:</td><td><input type="text"  id="rc" name="RC"/></td></tr>  
-<tr><td>Gender:   </td><td>        <select    name="Gender" id="Gender"> 
+<tr><td>Gender:   </td><td>        <select    name="Gender" id="Gender" > 
   <option value="M">M</option>
   <option value="Z">Z</option>
    
 </select></td></tr> 
-<tr><td colspan="2"><input type="submit"  id="output"      onclick="testInfo(document.getElementById('rc'));"  value="Save Employee"/></td></tr>  
+<tr><td colspan="2"><input type="submit"        onclick="testInfo(document.getElementById('rc'));  test(document.getElementById('fname')); " value="Save Employee"/></td></tr>  
 </table>  
 </form>  
   

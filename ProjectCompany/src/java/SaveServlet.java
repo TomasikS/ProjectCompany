@@ -67,7 +67,8 @@ public class SaveServlet extends HttpServlet {
         String s3=request.getParameter("RC");  
         String s4=request.getParameter("Gender");  
         
-        Employee e=new Employee();
+               if(s1.length() > 2 && s2.length() > 2&& s3.length() > 9&& s4.length() > 0 ) {
+                   Employee e=new Employee();
      
         e.setfirstname(s1);  
         e.setlastname(s2);  
@@ -77,18 +78,25 @@ public class SaveServlet extends HttpServlet {
                setS3(s3);
                 setS2(s2);
                  setS4(s4);
-       int status=
+                 int status = 0;
+        
+                   
+                 
                 
-                
-                Dataoperation.save(e);  
+                 status= Dataoperation.save(e);  
         if(status>0){  
            out.print("<p>Record saved successfully!</p>");  
            request.getRequestDispatcher("index.html").include(request, response);  
        }else{  
             out.println("Sorry! unable to save record");  
        }  
-          
+          }
+           else{  
+            out.println("Sorry! WRONG INPUT");  
+       }    
+               
+               
         out.close();  
-    }  
+    } }  
   
-}  
+  
