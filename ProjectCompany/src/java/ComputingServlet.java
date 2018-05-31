@@ -39,7 +39,7 @@ public class ComputingServlet extends HttpServlet {
             
             List<Employee> list2 = null;
             
-                list2 = dop.compute();
+               // list2 = dop.compute();
             
            //  System.out.println(list2);
              

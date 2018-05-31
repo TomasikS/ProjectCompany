@@ -4,17 +4,10 @@
  * and open the template in the editor.
  */
 
+import java.sql.SQLException;
 import java.util.List;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import static org.junit.Assert.*;
-import org.springframework.mock.web.MockHttpServletResponse;
-import java.util.Set;
-import javax.servlet.http.HttpServletResponse;
 import org.junit.Test;
-import org.springframework.web.util.WebUtils;
 /**
  *
  * @author Lenovo
@@ -29,7 +22,7 @@ public class ComputeServletTest {
  
     @Test
    
-	public void testSetContentTypeWithNoEncoding() {
+	public void testSetContentTypeWithNoEncoding() throws ClassNotFoundException, SQLException {
 
           Dataoperation dop=new Dataoperation();
                 List<Employee> list2=dop.compute();
