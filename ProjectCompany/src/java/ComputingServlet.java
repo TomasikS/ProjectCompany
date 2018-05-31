@@ -51,22 +51,22 @@ public class ComputingServlet extends HttpServlet {
                                  out.print("<br>"); 
                                  out.print("<br>"); 
                              out.print("<br>"); 
-                            
-                                out.println("<h1>Salaries List</h1>");
+                           //  out.print(list2); 
+                           out.println("<h1>Salaries List</h1>");
                                 
                                 out.print("<br>"); 
                                 
-            out.print("<table border='1' width='100%'");                
-              out.print("<tr><th>Id</th><th></th> <th>Denactious payouy</th> <th>taxbonus</th>Bonus </tr>"); 
+       //     out.print("<table border='1' width='100%'");                
+         //     out.print("<tr><th>Id</th><th></th> <th>Denactious payouy</th> <th>taxbonus</th>Bonus </tr>"); 
 
-for(int i=0;i<list2.size();i++)
+//for(int i=0;i<list2.size();i++)
               
-/*out.print("<tr><td>" +list2.get(i).getId()+"</td><td><td>"+  list2.get(i).getSp() +"</td></td><td><td>" +  list2.get(i).getZp()+"  </td></td></tr>"             );
+//out.print("<tr><td>" +list2.get(i).getId()+"</td><td><td>"+  list2.get(i).getSp() +"</td></td><td><td>" +  list2.get(i).getZp()+"  </td></td></tr>"             );
 
- */
-    out.print("<tr><td>" +list2.get(i).getId()+"<tr><td>" +list2.get(i).getZrazky()+ "</td> <td>" +list2.get(i).getDbonus()+ "</td>     <td>" +list2.get(i).getPbonus()+ "</td>  </tr>"       );
+ 
+   // out.print("<tr><td>" +list2.get(i).getId()+"<tr><td>" +list2.get(i).getZrazky()+ "</td> <td>" +list2.get(i).getDbonus()+ "</td>     <td>" +list2.get(i).getPbonus()+ "</td>  </tr>"       );
       
-                            out.print("</table>");
+   //                         out.print("</table>");
                             
         }
     }

@@ -4,15 +4,10 @@
  * and open the template in the editor.
  */
 
+ 
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -23,21 +18,7 @@ public class ComputingServletTest {
     public ComputingServletTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+ 
 
     /**
      * Test of processRequest method, of class ComputingServlet.
@@ -58,22 +39,33 @@ public class ComputingServletTest {
         Dataoperation dop=new Dataoperation();
  ComputingServlet ComputingServlet=new ComputingServlet();
   List<Employee> list2 = null;
+    
+  
         List<Employee> list3 = null;      
                 list2 = dop.compute();    assertNotNull(list2);
-                list3= dop.compute2();assertNotNull(list3);
+               list3= dop.compute2();assertNotNull(list3);
+               
+               for(int i=0;i<list3.size();i++)
+               
+              assertNotNull(list3.get(i).hplat);
           
-          
-                assertNotNull(list2.get(0).getId( ));
-                assertNotNull(list2.get(0).getKids());
-                assertNotNull(list2.get(0).getHours());
-                 assertNotNull(list2.get(0).getAmount());
-                 assertNotNull(list2.get(0).getBonus());
+                           for(int i=0;i<list2.size();i++)
+                           {
+               
+             assertNotNull(list2.get(i).getId( ));
+           assertNotNull(list2.get(i).getKids());
+              assertNotNull(list2.get(i).getHours());
+              assertNotNull(list2.get(i).getAmount());
+              assertNotNull(list2.get(i).getBonus());
                  
-                 
-                 
-                 
-                 
-                
+                   assertNotNull(list2.get(i).getSp());
+                 assertNotNull(list2.get(i).getZp());
+                  assertNotNull(list2.get(i).getPbonus());
+                 assertNotNull(list2.get(i).getZrazky());
+                 assertNotNull(list2.get(i).dbonus);
+    }
+    
+    
     }
     
 }
