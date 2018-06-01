@@ -40,8 +40,8 @@ public class ServletHistory extends HttpServlet {
     private static String url="jdbc:mysql://localhost:3306/company";
     private static String username="root";
     private static String password="root";
-         List<Employee> list = new ArrayList<>();
-         List<Employee> list2 = new ArrayList<>();
+         List<Employee> list = new ArrayList<Employee>();
+         List<Employee> list2 = new ArrayList<Employee>();
     /**
      *
      * @param request
@@ -129,10 +129,10 @@ public class ServletHistory extends HttpServlet {
         
         out.print("<tr><th>Id</th><th>Firstname</th><th>Lastname</th><th>Absence</th></tr>");    
           
+        
           
-          
-          for(Employee e:list2){
-out.print("<tr><td>"+e.getId()+"</td><td>"+e.getfirstname()  +"</td><td>"+e.getlastname()+"</td><td>"+e.getAbsence()        );
+          for(int i=0;i<list2.size();i++){
+out.print("<tr><td>"+list2.get(i).getId()+"</td><td>"+list2.get(i).getfirstname()  +"</td><td>"+list2.get(i).getlastname()+"</td><td>"+list2.get(i).getAbsence()        );
         
         
         
