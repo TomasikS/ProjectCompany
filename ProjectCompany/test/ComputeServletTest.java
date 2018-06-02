@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+import data.Employee;
+import data.Dataoperation;
 import java.sql.SQLException;
 import java.util.List;
 import static org.junit.Assert.*;

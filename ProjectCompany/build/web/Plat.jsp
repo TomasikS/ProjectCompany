@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="data.Employee"%>
+<%@page import="data.Dataoperation"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page import="java.sql.*" %> 
@@ -7,6 +10,9 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%
+    Dataoperation dop=new Dataoperation();
+   
+    List<Employee> list=dop.getAllEmployees();
 String id = request.getParameter("id");
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/";
@@ -33,12 +39,15 @@ ResultSet resultSet = null;
 <h1>Table salary_history</h1>
 <table border="1">
 <tr>
-<td>id</td>
-<td>salary1</td>
-<td>salary2</td>
-<td>salary3</td>
-<td>salary4</td>
-<td>salary5</td>
+<th>id</td>
+  <th>Firstname</th>
+  <th>Januar</th>
+<th>Lastname</th>
+<th>Januar</th>
+<th>Februar</th>
+<th>March</th>
+<th>April</th>
+<th>May</th>
 </tr>
 <%
 try{
@@ -46,9 +55,14 @@ connection = DriverManager.getConnection(connectionUrl+database, userid, passwor
 statement=connection.createStatement();
 String sql ="select * from  salary_history";
 resultSet = statement.executeQuery(sql);
-while(resultSet.next()){
+int i=-1;
+while(resultSet.next()){i++;
 %>
 <tr>
+    <td><%=list.get(i).getfirstname()%></td>
+   <td><%=list.get(i).getlastname()%></td>
+<td><%=resultSet.getString("salary1") %></td> 
+    
 <td><%=resultSet.getString("id") %></td>
 <td><%=resultSet.getString("salary1") %></td>
 <td><%=resultSet.getString("salary2") %></td>

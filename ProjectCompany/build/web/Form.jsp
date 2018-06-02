@@ -33,12 +33,12 @@ ResultSet resultSet = null;
 <h1>Table employee</h1>
 <table border="1">
 <tr>
-<td>id</td>
-<td>firstname</td>
-<td>lastname</td>
-<td>rc</td>
-<td>gender</td>
-<td>update</td>
+<th>id</th>
+<th>firstname</th>
+<th>lastname</th>
+<th>rc</th>
+<th>gender</th>
+<th>update</th>
 </tr>
 <%
 try{

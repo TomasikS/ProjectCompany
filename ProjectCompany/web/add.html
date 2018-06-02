@@ -12,26 +12,23 @@ and open the template in the editor.
 
 <script type="text/javascript">  
       var re = /[0-9]{10}/;  
-         var ree = /[A-Z][a-z]/; 
+         var ree = /([A-Z][a-zA-Z]*)/; 
       
       function testInfo(phoneInput) {  
         var OK = re.exec(phoneInput.value);  
         if (!OK)  {
           window.alert(phoneInput.value + ' wrong identify number');  
-      document.getElementById('rc').attr("disabled", true);
+      document.getElementById('posta').attr("disabled", true);
         }
-        else
-          window.alert('OK' + OK[0]);  
+          
       } 
       
             function test(phoneInput) {  
         var OK = ree.exec(phoneInput.value);  
         if (!OK)  {
           window.alert(phoneInput.value + ' wrong name');  
-      document.getElementById('rc').attr("disabled", true);
+      document.getElementById('posta').attr("disabled", true);
         }
-        else
-          window.alert('OK' + OK[0]);  
       } 
       
       
@@ -50,7 +47,13 @@ and open the template in the editor.
   <option value="Z">Z</option>
    
 </select></td></tr> 
-<tr><td colspan="2"><input type="submit"        onclick="testInfo(document.getElementById('rc'));  test(document.getElementById('fname')); " value="Save Employee"/></td></tr>  
+
+<tr><td>Amount:</td><td><input type="text"  id="rc" name="AM"/></td></tr>
+<tr><td>Hours:</td><td><input type="text"  id="rc" name="HH"/></td></tr>
+<tr><td>Kids:</td><td><input type="text"  id="rc" name="KK"/></td></tr>
+<tr><td>Idu:   </td><td>   </td></tr> 
+
+<tr><td colspan="2"><input type="submit"  id="posta"      onclick="testInfo(document.getElementById('rc'));  test(document.getElementById('fname')); " value="Save Employee"/></td></tr>  
 </table>  
 </form>  
   
