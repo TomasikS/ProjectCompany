@@ -74,16 +74,15 @@ public class SaveServlet extends HttpServlet {
                 int s5=Integer.parseInt(request.getParameter("AM"));  
         int s6=Integer.parseInt(request.getParameter("HH"));
                 int s7=Integer.parseInt(request.getParameter("KK"));  
-  
+  String s8=request.getParameter("GR");
         boolean b=validate(s1);
         boolean bb=validate(s2);
               /// if(s1.length() > 2 && s2.length() > 2&& s3.length() > 9&& s4.length() > 0 &&b==true && bb==true) {
                   
-              if((b==true) && (bb==true))
+              if((b==true) && (bb==true)  && (s8.equals("on")))
               {
               Employee e=new Employee();
     
-        
         
         e.setfirstname(s1);  
         e.setlastname(s2);  

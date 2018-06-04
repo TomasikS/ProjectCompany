@@ -4,10 +4,14 @@
  * and open the template in the editor.
  */
 
+import com.mysql.jdbc.PreparedStatement;
+import static data.Dataoperation.getAllEmployeesId;
+import data.Employee;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
@@ -122,6 +126,35 @@ public class DataoperationTest {
     }
      
      }
+     @Test
+         public   void save2(){  
+    
+         boolean pass = false;
+ 
+             Statement statement = null;
+          ResultSet resultSet = null;
+ 
+       
+        try{  
+                 Class.forName(driver).newInstance();
+            conn = DriverManager.getConnection(url,username,password);
+           
+        assertEquals(conn!= null, true);
+ 
+     statement = conn.createStatement();
+    resultSet = statement.executeQuery("SELECT * from employee_details");
+   
+    if (resultSet == null) {
+        pass = true;
+        assertEquals(pass, true);
+    }
+       
+              
+            conn.close();  
+        }catch(Exception ex){ex.printStackTrace();}  
+          
+         
+    } 
             
             
     }

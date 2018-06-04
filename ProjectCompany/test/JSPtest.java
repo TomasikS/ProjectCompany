@@ -10,11 +10,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import junit.framework.TestSuite;
-import net.sourceforge.jwebunit.WebTestCase;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
- public class JSPtest extends WebTestCase{
+ public class JSPtest{
 
  
  
